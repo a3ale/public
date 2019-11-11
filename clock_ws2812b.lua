@@ -1,11 +1,6 @@
 ws2812.init(ws2812.MODE_DUAL)
 local buffer = ws2812.newBuffer(36, 3)
-c0 = {0,0,0}
-c1 = {230,230,0}
-c2 = {90,0,90}
-c3 = {255,180,0}
-c4 = {0,250,250}
-c5 = {120,40,0}
+
 local m = {
    {1,1,1,0,1,1,1},
    {1,0,0,0,0,0,1},
@@ -32,7 +27,7 @@ end
 
 function sN(i,n,c0,c1)
  for j=1,7 do
-  sC(i+j, (digits[n+1][j] == 1) and c1 or c0)
+  sC(i+j, (m[n+1][j] == 1) and c1 or c0)
  end
 end
 
